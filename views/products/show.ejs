@@ -1,0 +1,111 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+  <br /><br />
+  <h3><b>More about your favourite product:</b></h3>
+  <br /><br />
+  <div class="row offset-2">
+    <div class="col-3" style="width: 20rem; height: 20.5rem">
+      <img src="<%= product.image%>" class="card-img-top" alt="product_image" />
+    </div>
+
+    <div class="show-page card card-body col-md-2">
+      <b class="card-text offset-1 mb-0" style="font-size: 2.1rem; border: none"
+        ><%= product.title %></b
+      >
+      <p class="mt-0 mb-0 offset-1" style="font-weight: 400">
+        <%= product.description %>
+      </p>
+
+      <div class="card-prices offset-1 card-text">
+        <p style="opacity: 0.7; font-size: 1.3rem">MRP: &nbsp;</p>
+        <p class="card-original-price" style="font-size: 1.3rem">
+          &#8377;<%= product.originalprice.toLocaleString("en-IN") %>
+        </p>
+        <p class="card-price mb-2" style="font-size: 1.3rem">
+          &#8377;<%= product.discountedprice.toLocaleString("en-IN") %>
+        </p>
+        <p style="color: red; font-size: 1.3rem">|</p>
+        <p style="font-size: 1.3rem; color: rgb(16, 164, 16)">
+          <%= product.offer %>
+        </p>
+      </div>
+      <div class="card-prices d-flex align-items-center mt-3 offset-2 gap-5">
+        <button class="btn add-btn px-4 py-2">Add to Bag</button>
+
+        <form class="m-0 p-0">
+          <button class="btn add-btn px-4 py-2">Delivery Options</button>
+        </form>
+      </div>
+      
+    </div>
+    <!-- <form action="/products/<%= product._id %>?_method=DELETE" method="post">
+        <button class="btn add-btn">DELETE</button>
+      </form> -->
+  </div>
+
+  <hr />
+  <br />
+  <h4 class="col-8 offset-2">Leave a review:</h4>
+  <br />
+  <div class="col-8 offset-3">
+    <form
+      action="/products/<%= product.id %>/reviews"
+      method="post"
+      novalidate
+      class="needs-validation"
+    >
+      <div>
+        <label for="rating" class="form-label">Rating: </label>
+        <input
+          class="form-range offset-1"
+          type="range"
+          min="1"
+          max="5"
+          id="rating"
+          name="review[rating]"
+        />
+      </div>
+      <br />
+      <div>
+        <label for="comment" class="form-label">Comment: </label>
+        <textarea
+          class="form-control"
+          name="review[comment]"
+          id="comment"
+          cols="7"
+          rows="1"
+          placeholder="Add a comment..."
+          required
+        ></textarea>
+        <div class="valid-feedback">Nice! That works.</div>
+        <div class="invalid-feedback">Comment is required.</div>
+      </div>
+      <br />
+      <button class="btn add-btn">Submit</button>
+    </form> 
+  </div>
+  <hr />
+  <h4 class="col-8 offset-2">Reviews:</h4>
+  <div class="col-8 offset-3">
+  <div class="row">
+    <% for(let review of product.reviews) {%>
+        <div class="card col-8" style="width: 21rem;">
+          <div class="card-body">
+            <h5 class="card-title offset-0">@JaneDoe</h5>
+            <br/>
+            <p class="card-subtitle mb-2 offset-1 text-body-secondary"><%=review.rating%> star rating</p>
+            <p class="card-text offset-1"><%= review.comment%></p>
+            <form method="post" action="/products/<%= product._id %>/reviews/<%= review._id %>?_method=DELETE">
+              <button class="btn add-btn offset-9">Delete</button>
+            </form>
+          </div>
+          
+        </div>
+    <% } %>
+  </div>
+  </div>
+  
+    
+
+  
+</body>

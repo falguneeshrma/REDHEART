@@ -1,0 +1,140 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+  <div class="row mt-3">
+    <div class="col-md-7 offset-2">
+      <h3><b>Edit the product:</b></h3>
+      <br />
+      <form
+        method="post"
+        action="/products/<%= product._id %>?_method=PUT"
+        novalidate
+        class="needs-validation"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <br />
+          <input
+            name="product[title]"
+            value="<%= product.title%>"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div class="valid-feedback">Nice! That works.</div>
+          <div class="invalid-feedback">Title is required.</div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-7">
+            <label for="brand" class="form-label">Brand</label>
+            <br />
+            <input
+              name="product[brand]"
+              value="<%= product.title%>"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Nice! That works.</div>
+            <div class="invalid-feedback">Brand name is required.</div>
+          </div>
+          <div class="mb-3 col-md-5">
+            <label for="category" class="form-label">Category</label>
+            <br />
+            <select
+              class="form-control"
+              id="category"
+              name="product[category]"
+              required
+            >
+              <option value="" disabled selected>
+                <%= product.category %>
+              </option>
+              <option value="Make Up">Make Up</option>
+              <option value="Skin Care">Skin Care</option>
+              <option value="Hair Care">Hair Care</option>
+              <option value="Personal Care">Personal Care</option>
+              <option value="Bath & Body">Bath & Body</option>
+              <option value="Health & Hygiene">Health & Hygiene</option>
+              <option value="Mom & Baby">Mom & Baby</option>
+              <option value="Men">Men</option>
+              <option value="Appliances">Appliances</option>
+              <option value="Fragrance">Fragrance</option>
+              <option value="Accessories">Accessories</option>
+              <option value="Natural">Natural</option>
+            </select>
+            <div class="valid-feedback">Nice! That works.</div>
+            <div class="invalid-feedback">Category is required.</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Image Link</label>
+          <br />
+          <input
+            name="product[image]"
+            value="<%= product.title%>"
+            type="text"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <br />
+          <textarea name="product[description]" class="form-control">
+<%= product.description %></textarea
+          >
+          <div class="valid-feedback">Nice! That works.</div>
+          <div class="invalid-feedback">Description is required.</div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="originalprice" class="form-label">Original Price</label>
+            <input
+              name="product[originalprice]"
+              value="<%= product.originalprice%>"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Nice! That works.</div>
+            <div class="invalid-feedback">Original price is required.</div>
+          </div>
+
+          <div class="mb-3 col-md-4">
+            <label for="discountedprice" class="form-label"
+              >Discounted Price</label
+            >
+            <br />
+            <input
+              name="product[discountedprice]"
+              value="<%= product.discountedprice%>"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Nice! That works.</div>
+            <div class="invalid-feedback">Discounted price is required.</div>
+          </div>
+
+          <div class="mb-3 col-md-4">
+            <label for="offer" class="form-label">Offers</label>
+            <br />
+            <input
+              name="product[offer]"
+              value="<%= product.offer%>"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div class="valid-feedback">Nice! That works.</div>
+            <div class="invalid-feedback">Offer is required.</div>
+          </div>
+        </div>
+        <button class="btn btn-light add-btn mt-3">Update</button>
+      </form>
+    </div>
+  </div>
+</body>

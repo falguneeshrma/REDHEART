@@ -1,0 +1,31 @@
+<% layout("/layouts/boilerplate") -%>
+
+<body>
+  <br/><br/>
+  <h3 class=""><b><%= brand.toUpperCase() %></b> Collection:</h3>
+  <br/><br/>
+  <div class="row row-cols-md-3 row-cols-md-2 row-cols-sm-1 g-4">
+  <% for(let product of products) {%>
+    <a class="card-a" href="/products/<%= product._id%>">
+          <div class="card col" style="width: 20rem; height: 29rem;">
+            <img src="<%= product.image %>" class="card-img-top" style="width: 10rem; height: 15rem;" alt="product_image">
+            <div class="card-body">
+              <b><p class="card-text offset-2"><%= product.title %></p></b>
+              <div class="card-prices offset-0 mb-2"> <p style="opacity: 0.7; ">MRP: &nbsp;</p>
+                <p class="card-original-price">&#8377;<%= product.originalprice.toLocaleString("en-IN") %></p>
+                <p class="card-price">&#8377;<%= product.discountedprice.toLocaleString("en-IN") %></p>
+                <p style="color: red;"> | </p>
+                <p class="card-offer  " style="color: rgb(16, 164, 16); font-size: 0.9rem; font-weight: 600;"><%= product.offer %></p>
+              </div>
+              
+              <div class="card-prices d-flex justify-content-between align-items-center gap-2 ">
+                <button class="btn btn-sm add-btn flex-fill">Add to Bag</button>
+              </div>
+
+            </div>
+          </div>
+          
+        </a>
+  <% }  %>
+  </div>
+</body>

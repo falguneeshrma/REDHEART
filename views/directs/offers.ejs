@@ -1,0 +1,16 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+   <br/><br/>
+    <h3 class=""><b>TODAY'S OFFERS:</b></h3>
+    <br/><br/>
+<div class="row row-cols-md-4 row-cols-md-3 row-cols-sm-2">
+    <% for(let offer of offers) {%>
+        <div class="card" style="width: 16rem; margin-left: 9rem; margin-bottom: 2rem; gap: 3rem; font-size: 1.2rem">
+            <div class="card-body">
+                <p class="card-text brand-link"><b><a href="/offers/<%= encodeURIComponent(offer) %>"><%= offer %></a></b></p>
+            </div>
+        </div>    
+    <% } %>
+</div> 
+</body>
+
