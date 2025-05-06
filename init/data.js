@@ -9,7 +9,7 @@ const sampleProducts = [
     originalprice: 499,
     offer: "Buy 1 Get 1",
     image:
-      "https://plus.unsplash.com/premium_photo-1676380030496-1b1fd3a33a1b?q=80&w=1984&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Vitamin C Face Serum",
@@ -21,7 +21,7 @@ const sampleProducts = [
     originalprice: 699,
     offer: "Flat ₹50 Off",
     image:
-      "https://plus.unsplash.com/premium_photo-1679134540232-c6e66ceee11c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Keratin Hair Mask",
@@ -32,7 +32,7 @@ const sampleProducts = [
     originalprice: 899,
     offer: "Flat ₹50 Off",
     image:
-      "https://images.unsplash.com/photo-1619451334792-150fd785ee74?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Charcoal Face Wash",
@@ -44,7 +44,7 @@ const sampleProducts = [
     originalprice: 349,
     offer: "Summer Sale",
     image:
-      "https://media.istockphoto.com/id/1044043280/vector/blank-plastic-tube-mockup.jpg?s=2048x2048&w=is&k=20&c=YzuwhNR5Omm7EeKv6UI5girFhdt7m6GDx4MlQxmQEhU=",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Natural Aloe Vera Gel",
@@ -55,7 +55,7 @@ const sampleProducts = [
     originalprice: 299,
     offer: "Buy 1 Get 1",
     image:
-      "https://media.istockphoto.com/id/2203049456/photo/flat-lay-composition-of-aloe-vera-slices-essential-oil-bottles-gua-sha-stone-and-a-wooden.jpg?s=2048x2048&w=is&k=20&c=dXLRdUtOgyseJ-z3lOwAp4cZlGdtHgX-JPLap12NLq8=",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Rose Water Toner",
@@ -66,7 +66,7 @@ const sampleProducts = [
     originalprice: 250,
     offer: "Summer Sale",
     image:
-      "https://media.istockphoto.com/id/598073578/photo/rose-water-with-a-rose-petal-inside.jpg?s=2048x2048&w=is&k=20&c=LTIHzP01-g55sRw5ajK5oXmKoIu9HcSagqCDT7WvlTU=",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Herbal Shampoo",
@@ -77,7 +77,7 @@ const sampleProducts = [
     originalprice: 599,
     offer: "Summer Sale",
     image:
-      "https://images.unsplash.com/photo-1611930021592-a8cfd5319ceb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Deodorant Spray for Men",
@@ -88,7 +88,7 @@ const sampleProducts = [
     originalprice: 399,
     offer: "Flat ₹50 Off",
     image:
-      "https://images.unsplash.com/photo-1699528136776-51ddd829363e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Sunscreen SPF 50",
@@ -99,7 +99,7 @@ const sampleProducts = [
     originalprice: 799,
     offer: "Flat ₹50 Off",
     image:
-      "https://images.unsplash.com/photo-1598662972299-5408ddb8a3dc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "BB Cream with SPF",
@@ -110,7 +110,7 @@ const sampleProducts = [
     originalprice: 549,
     offer: "Quick Sale",
     image:
-      "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
@@ -122,7 +122,7 @@ const sampleProducts = [
     originalprice: 449,
     offer: "Quick Sale",
     image:
-      "https://images.unsplash.com/photo-1699373383871-4ca5636948c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Makeup Remover Pads",
@@ -134,7 +134,7 @@ const sampleProducts = [
     originalprice: 349,
     offer: "Quick Sale",
     image:
-      "https://media.istockphoto.com/id/1410505316/photo/cotton-reusable-makeup-remover-pads-in-a-cloth-bag-on-a-beige-background-the-concept-of.jpg?s=2048x2048&w=is&k=20&c=vaFnr1AIDXpC_pqf0TRB0pVx1UJgC58Nzx2LzK8Yrak=",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Organic Baby Lotion",
@@ -235,7 +235,7 @@ const sampleProducts = [
     originalprice: 2499,
     offer: "Elite",
     image:
-      "https://media.istockphoto.com/id/909126118/photo/young-woman-standing-in-bathroom-in-the-morning.jpg?s=2048x2048&w=is&k=20&c=X4VrpEt3EQ-wF2CcScwMIUzAa3hk_DKNKl245OeTR58=",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
@@ -303,7 +303,7 @@ const sampleProducts = [
     originalprice: 5999,
     offer: "Elite",
     image:
-      "https://media.istockphoto.com/id/909126118/photo/young-woman-standing-in-bathroom-in-the-morning.jpg?s=2048x2048&w=is&k=20&c=X4VrpEt3EQ-wF2CcScwMIUzAa3hk_DKNKl245OeTR58=",
+      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "Ayurvedic Toothpaste",
