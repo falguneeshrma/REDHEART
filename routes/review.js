@@ -1,16 +1,10 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
-//Express does NOT automatically pass :id into your nested router’s req.params, unless you explicitly allow it.
-//after mergeParams: true
-//Now req.params.id inside your POST and DELETE routes actually gives you the real product ID from the URL — not undefined as accessed from parent route.
-
-//app crashes if not required
 const wrapAsync = require("../utils/wrapAsync");
 const ExpressError = require("../utils/ExpressError.js");
 const Product = require("../models/product.js");
 const Review = require("../models/review.js");
-const { productSchema, reviewSchema } = require("../schema.js"); // Joi-validate listings from backend
-//function for Joi - MIDDLEWARE - to validate product reviews from backend
+const { productSchema, reviewSchema } = require("../schema.js");
 const validateReview = (req, res, next) => {
   let { error } = reviewSchema.validate(req.body);
   if (error) {
@@ -21,9 +15,7 @@ const validateReview = (req, res, next) => {
   }
 };
 
-//read- get request - to read all reviews on separate page - no need - reviews seen on show page only
-
-//create - post request - one review - /products/:id/reviews
+//create - create review
 router.post(
   "/",
   validateReview,

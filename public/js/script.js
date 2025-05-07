@@ -1,11 +1,3 @@
-//novalidate and neeeds-validation class in new.ejs is used to get bootstrap styling
-//also add valid and invalid feedback classes
-//<form
-// method="post"
-// action="/products"
-// nonvalidate logic
-// class="needs-validation"></form>
-
 //bootstrap code
 (() => {
   "use strict";

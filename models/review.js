@@ -15,5 +15,3 @@ const reviewSchema = new Schema({
 });
 
 module.exports = mongoose.model("Review", reviewSchema);
-
-//to link it with specific product => product - its reviews => add reviews to product model

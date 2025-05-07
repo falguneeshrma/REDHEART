@@ -1,9 +1,3 @@
-//search functionality
-//one line offers same type eliminate save rs offers
-//one line product name keep 3 letter name exact
-//isAdmin middleware
-//offer= elite choice
-
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -44,23 +38,23 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
-//PRODUCT MODEL
+//PRODUCTS MODEL
 
 //homepage
 app.get("/", (req, res) => {
   res.render("directs/homepage.ejs");
 });
 
-//router brand - all /brands will be seen in /routes/brand.js
+//router brand
 app.use("/brands", brands);
 
-//router category - all /categories will be seen in /routes/category.js
+//router category
 app.use("/categories", categories);
 
-//router offer - all /offers will be seen in /routes/offer.js
+//router offer
 app.use("/offers", offers);
 
-//router prouduct - all /products will be seen in /routes/product.js
+//router prouduct
 app.use("/products", products);
 
 //REVIEWS MODEL
@@ -80,12 +74,12 @@ app.use("/products/:id/reviews", reviews);
 //   res.send("Successful Testing");
 // });
 
-//page not found - random page - MIDDLEWARE
+//page not found
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found!"));
 });
 
-//Express error with staus code and message - MIDDLEWARE
+//Express error with staus code and message
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something went wrong..." } = err;
   //error.ejs contains alerts

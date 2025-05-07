@@ -1,12 +1,9 @@
 const express = require("express");
 const router = express.Router();
-//app crashes if not required
 const wrapAsync = require("../utils/wrapAsync");
 const ExpressError = require("../utils/ExpressError.js");
 const Product = require("../models/product.js");
-const { productSchema } = require("../schema.js"); // Joi-validate listings from backend
-
-//function for Joi - MIDDLEWARE - to validate product listings from backend
+const { productSchema } = require("../schema.js");
 const validateProduct = (req, res, next) => {
   let { error } = productSchema.validate(req.body);
   if (error) {
@@ -17,7 +14,6 @@ const validateProduct = (req, res, next) => {
   }
 };
 
-//read- get request- all posts-- /products
 //1.Index Route
 router.get(
   "/",
@@ -27,13 +23,11 @@ router.get(
   })
 );
 
-//create- post request- to send form to server-- /products
 //4.Create Route
 router.post(
   "/",
   validateProduct,
   wrapAsync(async (req, res) => {
-    // let {title, brand, image, description, category, originalprice, discountedprice, offer} = req.body;
     let product = req.body.product;
     const newProduct = new Product(product);
     await newProduct.save();
@@ -41,25 +35,22 @@ router.post(
   })
 );
 
-//create- get request- to render form to client-- /products/new
 //3.New Route
 router.get("/products/new", (req, res) => {
   res.render("products/new.ejs");
 });
 
-//read- get request- single post-- /products/:id
 //2.Show Route
 router.get(
   "/:id",
   wrapAsync(async (req, res) => {
     let { id } = req.params;
-    // When one schema references another — like Product having an array of Review IDs — you use .populate() to fetch the actual review documents instead of just getting the ObjectIds.
+
     const product = await Product.findById(id).populate("reviews");
     res.render("products/show.ejs", { product });
   })
 );
 
-//update- get request- to render form to client-- /products/:id/edit
 //5.Edit Route
 router.get(
   "/:id/edit",
@@ -70,16 +61,13 @@ router.get(
   })
 );
 
-//update- post override patch request- to send form to server--  /products/:id
 //6.Update Route
 router.put(
   "/:id",
   validateProduct,
   wrapAsync(async (req, res) => {
     let { id } = req.params;
-    //findByIdAndUpdate requires two args => Product.findByIdAndUpdate(id, updateData (-data to be updated))
-    //By default, findByIdAndUpdate(id, updateData) returns the old document before the update. If you want the updated document, you need to explicitly set { new: true }.
-    // The spread operator (...) is used to extract all key-value pairs from an object and create a shallow copy.
+
     const updatedProduct = await Product.findByIdAndUpdate(
       id,
       { ...req.body.product },
@@ -89,7 +77,6 @@ router.put(
   })
 );
 
-//delete- post override delete request- single post-- /products/:id
 //7.Delete Route
 router.delete(
   "/:id",

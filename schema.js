@@ -1,9 +1,3 @@
-//Joi npm i joi
-// require in app.js
-//create joi schema
-//schema validate func
-//middleware
-
 const Joi = require("joi");
 
 module.exports.productSchema = Joi.object({

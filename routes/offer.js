@@ -1,7 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
-//app crashes if not required
 const wrapAsync = require("../utils/wrapAsync");
 
 const Product = require("../models/product.js");
