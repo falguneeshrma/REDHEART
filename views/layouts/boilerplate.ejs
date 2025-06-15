@@ -29,9 +29,22 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+    <!-- Static Multicolor Gradient Ribbon -->
     <div
-      style="background-color: rgb(242, 66, 66); height: 1.8rem; width: 100%"
+      style="
+        height: 1.8rem;
+        width: 100%;
+        background: linear-gradient(
+          to right,
+          #8b0000,
+          #b22222,
+          #c1126b,
+          #d72638,
+          #ff4d6d
+        );
+      "
     ></div>
+
     <%- include("../includes/navbar1.ejs") %>
     <%-include("../includes/navbar2.ejs") %>
     <div class="container"><%- body -%></div>

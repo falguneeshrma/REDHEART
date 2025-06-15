@@ -31,6 +31,7 @@ router.post(
     let product = req.body.product;
     const newProduct = new Product(product);
     await newProduct.save();
+    req.flash("success", "New Product added!");
     res.redirect("/products");
   })
 );

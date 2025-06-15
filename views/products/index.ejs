@@ -1,30 +1,51 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
   <br/><br/>
-    <h3><b>Just Arrived!</b> </h3>
-    <br/><br/>
-    <div class="row row-cols-md-3 row-cols-md-2 row-cols-sm-1 g-4">
-      <% for(let product of allProducts){ %> 
-        <a class="card-a" href="/products/<%= product._id%>"> 
-          <div class="card col" style="width: 20rem; height: 29rem;">
-            <img src="<%= product.image %>" class="card-img-top" style="width: 10rem; height: 15rem;" alt="product_image">
-            <div class="card-body">
-              <b><p class="card-text offset-2"><%= product.title %></p></b>
-              <div class="card-prices offset-0 mb-2"> <p style="opacity: 0.7; ">MRP: &nbsp;</p>
-                <p class="card-original-price">&#8377;<%= product.originalprice.toLocaleString("en-IN") %></p>
-                <p class="card-price">&#8377;<%= product.discountedprice.toLocaleString("en-IN") %></p>
-                <p style="color: red;"> | </p>
-                <p class="card-offer" style="color: rgb(16, 164, 16); font-size: 0.9rem; font-weight: 600;"><%= product.offer %></p>
-              </div>
-              
-              <div class="card-prices d-flex justify-content-between align-items-center gap-2 ">
-                <button class="btn btn-sm add-btn flex-fill">Add to Bag</button>
-              </div>
+  <h3><b>Just Arrived!</b></h3>
+  <br/><br/>
 
+  <% 
+    const groupedOffers = {};
+    for (let product of allProducts) {
+      if (!groupedOffers[product.offer]) {
+        groupedOffers[product.offer] = [];
+      }
+      groupedOffers[product.offer].push(product);
+    }
+  %>
+
+  <% for (let offer in groupedOffers) { %>
+    
+    <div style="margin-bottom: 3rem; margin-inline: 1rem; padding: 1rem; border-radius: 1rem; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); background-color: #ffffff;">
+      <h4 style="margin-left: 0.5rem; font-weight: 700;"><%= offer %></h4>
+
+      
+      <div style="display: flex; overflow-x: auto; gap: 1.2rem; padding: 1rem; scroll-snap-type: x mandatory; scrollbar-width: none;">
+        <% for (let product of groupedOffers[offer]) { %> 
+          <a class="card-a" href="/products/<%= product._id%>"> 
+            
+            <div class="card col" style="width: 20rem; height: 29rem; flex: 0 0 auto; scroll-snap-align: start; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); border-radius: 0.75rem; overflow: hidden;">
+              <img src="<%= product.image %>" class="card-img-top" style="width: 100%; height: 15rem; object-fit: cover;" alt="product_image">
+              
+              <div class="card-body" style="padding: 1rem;">
+                <b><p class="card-text" style="text-align: center;"><%= product.title %></p></b>
+                
+                <div class="card-prices mb-2" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
+                  <p style="opacity: 0.7;">MRP:</p>
+                  <p class="card-original-price" style="text-decoration: line-through red;">&#8377;<%= product.originalprice.toLocaleString("en-IN") %></p>
+                  <p class="card-price" style="font-weight: 500;">&#8377;<%= product.discountedprice.toLocaleString("en-IN") %></p>
+                  <p style="color: red;">|</p>
+                  <p class="card-offer" style="color: rgb(16, 164, 16); font-size: 0.9rem; font-weight: 600;"><%= product.offer %></p>
+                </div>
+                
+                <div class="card-prices d-flex justify-content-between align-items-center gap-2">
+                  <button class="btn btn-sm add-btn flex-fill">Add to Bag</button>
+                </div>
+              </div>
             </div>
-          </div>
-          
-        </a>
-      <% } %>
+          </a>
+        <% } %>
+      </div>
     </div>
+  <% } %>
 </body>

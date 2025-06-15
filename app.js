@@ -6,6 +6,20 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 
+const flash = require("connect-flash");
+
+const session = require("express-session");
+const sessionOptions = {
+  secret: "redheart",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    expires: Date.now() + 1000 * 60 * 60 * 24 * 3,
+    maxAge: 1000 * 60 * 60 * 24 * 3,
+    httpOnly: true,
+  },
+};
+
 const ExpressError = require("./utils/ExpressError.js");
 
 const products = require("./routes/product.js");
@@ -43,6 +57,15 @@ app.engine("ejs", ejsMate);
 //homepage
 app.get("/", (req, res) => {
   res.render("directs/homepage.ejs");
+});
+
+//before all routes
+app.use(session(sessionOptions));
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  next();
 });
 
 //router brand
